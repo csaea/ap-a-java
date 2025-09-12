@@ -1,7 +1,7 @@
 # Key Terms in Object-Oriented Programming
 
 - **Class**  
-  Implementation (or a blueprint) of attributes and behaviors of an object.
+  Implementation (like a blueprint or a factory) of attributes and behaviors of an object.
 
 - **Object**  
   An instance of a class.
