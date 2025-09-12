@@ -1,4 +1,4 @@
-# Key Terms in Object-Oriented Programming
+# Concepts in Object-Oriented Programming
 
 - **Class**  
   Implementation (like a blueprint or a factory) of attributes and behaviors of an object.
