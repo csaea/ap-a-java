@@ -1,49 +1,168 @@
-# Concepts in Object-Oriented Programming
+# Concepts in Object-Oriented Programming (OOP) for Java
 
 - **Class**  
-  Implementation (like a blueprint or a factory) of attributes and behaviors of an object.
+  Implementation (like a blueprint or a factory) of attributes and behaviors of an object.  
+  ```java
+  public class Book {
+      private String title;
+      private String author;
+  }
 
-- **Object**  
+
+* **Object**
   A specific instance of a class. (If a factory makes boots, then a single pair of boots it produced is an **object**).
 
-- **Attributes**  
+  ```java
+  Book myBook = new Book();
+  ```
+
+* **Attributes**
   Data related to an instance of a class. Stored in variables.
 
-- **Behaviors**  
+  ```java
+  private String title;
+  private String author;
+  ```
+
+* **Behaviors**
   What instances of a class can *do*. Found in methods.
 
-- **Constructor**  
+  ```java
+  public void printTitle() {
+      System.out.println(title);
+  }
+  ```
+
+* **Constructor**
   A special method used to create and initialize a new object with default attributes.
 
-- **Separation of Concerns**  
-  Keeping different parts of a program focused on their own tasks, so code is easier to manage. (If you owned a veterinary, you'd separate classes for Pets, Dogs, Cats, Customers, etc).
+  ```java
+  public Book(String title, String author) {
+      this.title = title;
+      this.author = author;
+  }
+  ```
 
-- **Package**  
-  A way to group related classes together. Similar to a folder for your project. Classes are linked with the `package` command.
+* **Class Header**
+  The first line of a class that defines its name, access modifier, and optionally its superclass or interfaces.
 
-- **Encapsulation**  
-  Hiding details inside a class and only showing what is necessary, usually with `private` and `public`.
+  ```java
+  public class Library { }
+  ```
 
-- **Parameter**  
+* **Separation of Concerns**
+  Keeping different parts of a program focused on their own tasks, so code is easier to manage.
+
+  ```java
+  public class Book { }
+  public class Library { }
+  public class Patron { }
+  ```
+
+* **Package**
+  A way to group related classes together.
+
+  ```java
+  package com.thelibraryproject.libraryapp;
+  ```
+
+* **Encapsulation**
+  Hiding details inside a class and only showing what is necessary. Protects the object from interference and controls access to the data.
+
+  ```java
+  private String title; // private attribute
+  public String getTitle() { return title; } // public getter
+  ```
+
+* **Parameter**
   Defines the type of value to receive when a method or constructor is called.
 
-- **Argument**  
+  ```java
+  public void setTitle(String newTitle) { this.title = newTitle; }
+  ```
+
+* **Argument**
   The specific value provided when a method or constructor is called.
 
-- **Logic Error**  
-  Occurs when a program runs without crashing, but behaves in an incorrect or unexpected way. Typically an error on the part of the programmer, not the program. 
+  ```java
+  myBook.setTitle("1984"); // "1984" is the argument
+  ```
 
-- **String Literal**  
+* **Logic Error**
+  Occurs when a program runs without crashing, but behaves in an incorrect or unexpected way.
+
+  ```java
+  int average = (10 + 20) / 3; // incorrect calculation
+  ```
+
+* **Inheritance**
+  OOP principle where a subclass inherits the attributes and behaviors of a superclass.
+
+  ```java
+  public class Dog extends Pet { }
+  ```
+
+* **Subclass**
+  A class that extends a superclass and inherits its attributes and behaviors.
+
+  ```java
+  public class Cat extends Pet { }
+  ```
+
+* **Superclass**
+  A class that can be extended to create subclasses.
+
+  ```java
+  public class Pet { }
+  ```
+
+* **Tester Class**
+  The class that contains the `main` method -- the entry point of a Java program.
+
+  ```java
+  public class PetTester {
+      public static void main(String[] args) {
+          Dog dog = new Dog();
+      }
+  }
+  ```
+
+* **Method Signature**
+  Consists of a method's name and its parameter list.
+
+  ```java
+  public void setTitle(String title) { ... } // method signature = setTitle(String)
+  ```
+
+* **String Literal**
   A sequence of characters enclosed in quotation marks (`" "`).
 
-- **Inheritance**  
-  OOP principle where a subclass inherits the attributes and behaviors of a superclass. (A class `Dog` inherits attributes and behaviors of the class above it, `Pets`)
+  ```java
+  String title = "Moby Dick";
+  ```
 
-- **Subclass**  
-  A class that extends a superclass and inherits its attributes and behaviors. (The classes `Dog` and `Cat` are subclasses of `Pets`)
+* **Return**
+  To exit a method and go back to the point in the program that called it, optionally providing a value.
 
-- **Superclass**  
-  A class that can be extended to create subclasses. (The superclass `Pets` contins the subclasses `Dog` and `Cat`)
+  ```java
+  public String getTitle() {
+      return title;
+  }
+  ```
 
-- **Tester Class**  
-  The class that contains the `main` method -- the entry point of a Java program. (A `PetTester` class doesn't definte a `Pet` -- it only builds pet objects and tests to make sure they're working correctly).
+* **Return Type**
+  The type of value returned by a method before it completes its execution and exits.
+
+  ```java
+  public String getTitle() { return title; } // return type = String
+  ```
+
+* **Void**
+  Specifies that a method does not return a value.
+
+  ```java
+  public void printTitle() {
+      System.out.println(title);
+  }
+  ```
+
