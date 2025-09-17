@@ -1,6 +1,7 @@
 # Concepts in Object-Oriented Programming (OOP) for Java
 
-- **Class**  
+- **Class**
+ 
   Implementation (like a blueprint or a factory) of attributes and behaviors of an object.  
   ```java
   public class Book {
@@ -9,14 +10,16 @@
   }
 
 
-* **Object**
+- **Object**
+
   A specific instance of a class. (If a factory makes boots, then a single pair of boots it produced is an **object**).
 
   ```java
   Book myBook = new Book();
   ```
 
-* **Attributes**
+- **Attributes**
+
   Data related to an instance of a class. Stored in variables.
 
   ```java
@@ -24,7 +27,8 @@
   private String author;
   ```
 
-* **Behaviors**
+- **Behaviors**
+
   What instances of a class can *do*. Found in methods.
 
   ```java
@@ -33,7 +37,8 @@
   }
   ```
 
-* **Constructor**
+- **Constructor**
+
   A special method used to create and initialize a new object with default attributes.
 
   ```java
@@ -43,14 +48,16 @@
   }
   ```
 
-* **Class Header**
+- **Class Header**
+
   The first line of a class that defines its name, access modifier, and optionally its superclass or interfaces.
 
   ```java
   public class Library { }
   ```
 
-* **Separation of Concerns**
+- **Separation of Concerns**
+
   Keeping different parts of a program focused on their own tasks, so code is easier to manage.
 
   ```java
@@ -59,14 +66,16 @@
   public class Patron { }
   ```
 
-* **Package**
+- **Package**
+
   A way to group related classes together.
 
   ```java
   package com.thelibraryproject.libraryapp;
   ```
 
-* **Encapsulation**
+- **Encapsulation**
+
   Hiding details inside a class and only showing what is necessary. Protects the object from interference and controls access to the data.
 
   ```java
@@ -74,49 +83,56 @@
   public String getTitle() { return title; } // public getter
   ```
 
-* **Parameter**
+- **Parameter**
+
   Defines the type of value to receive when a method or constructor is called.
 
   ```java
   public void setTitle(String newTitle) { this.title = newTitle; }
   ```
 
-* **Argument**
+- **Argument**
+
   The specific value provided when a method or constructor is called.
 
   ```java
   myBook.setTitle("1984"); // "1984" is the argument
   ```
 
-* **Logic Error**
+- **Logic Error**
+
   Occurs when a program runs without crashing, but behaves in an incorrect or unexpected way.
 
   ```java
   int average = (10 + 20) / 3; // incorrect calculation
   ```
 
-* **Inheritance**
+- **Inheritance**
+
   OOP principle where a subclass inherits the attributes and behaviors of a superclass.
 
   ```java
   public class Dog extends Pet { }
   ```
 
-* **Subclass**
+- **Subclass**
+
   A class that extends a superclass and inherits its attributes and behaviors.
 
   ```java
   public class Cat extends Pet { }
   ```
 
-* **Superclass**
+- **Superclass**
+
   A class that can be extended to create subclasses.
 
   ```java
   public class Pet { }
   ```
 
-* **Tester Class**
+- **Tester Class**
+
   The class that contains the `main` method -- the entry point of a Java program.
 
   ```java
@@ -127,21 +143,24 @@
   }
   ```
 
-* **Method Signature**
+- **Method Signature**
+
   Consists of a method's name and its parameter list.
 
   ```java
   public void setTitle(String title) { ... } // method signature = setTitle(String)
   ```
 
-* **String Literal**
+- **String Literal**
+
   A sequence of characters enclosed in quotation marks (`" "`).
 
   ```java
   String title = "Moby Dick";
   ```
 
-* **Return**
+- **Return**
+
   To exit a method and go back to the point in the program that called it, optionally providing a value.
 
   ```java
@@ -150,14 +169,16 @@
   }
   ```
 
-* **Return Type**
+- **Return Type**
+
   The type of value returned by a method before it completes its execution and exits.
 
   ```java
   public String getTitle() { return title; } // return type = String
   ```
 
-* **Void**
+- **Void**
+
   Specifies that a method does not return a value.
 
   ```java
