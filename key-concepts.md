@@ -12,7 +12,7 @@
 
 - **Object**
 
-  A specific instance of a class. (If a factory makes boots, then a single pair of boots it produced is an **object**).
+  A specific instance of a class. (If a library needs to add a new book, then a single book it creates is an **object**).
 
   ```java
   Book myBook = new Book();
