@@ -2,14 +2,13 @@
 
 - **Class**
  
-  Implementation (like a blueprint or a factory) of attributes and behaviors of an object.  
+  Implementation (like a blueprint or a template) for creating attributes and behaviors of an object.  
   ```java
   public class Book {
       private String title;
       private String author;
   }
-
-
+  
 - **Object**
 
   A specific instance of a class. (If a library needs to add a new book, then a single book it creates is an **object**).
@@ -115,15 +114,7 @@
   public class Dog extends Pet { }
   ```
 
-- **Subclass**
-
-  A class that extends a superclass and inherits its attributes and behaviors.
-
-  ```java
-  public class Cat extends Pet { }
-  ```
-
-- **Superclass**
+  - **Superclass**
 
   A class that can be extended to create subclasses.
 
@@ -131,9 +122,17 @@
   public class Pet { }
   ```
 
+- **Subclass**
+
+  A class that inherits attributes and behaviors of a superclass. It `extends` from a superclass.
+
+  ```java
+  public class Cat extends Pet { }
+  ```
+
 - **Tester Class**
 
-  The class that contains the `main` method -- the entry point of a Java program.
+  The class that contains the `main` method -- often Main.java -- the entry point of any Java program.
 
   ```java
   public class PetTester {
@@ -156,12 +155,12 @@
   A sequence of characters enclosed in quotation marks (`" "`).
 
   ```java
-  String title = "Moby Dick";
+  String title = "The Great Gatsby";
   ```
 
 - **Return**
 
-  To exit a method and go back to the point in the program that called it, optionally providing a value.
+  To exit a method and `return` to the point in the program that called it. Often providing a value.
 
   ```java
   public String getTitle() {
