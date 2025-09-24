@@ -48,13 +48,13 @@
   ```
 - **Method**
 
-A named set of instructions to perform a task
+  A named set of instructions to perform a task
 
-```java
-public checkOutBook(int id, String title) {
+  ```java
+  public checkOutBook(int id, String title) {
   //behavior of method
-}
-```
+  }
+  ```
 
 - **Class Header**
 
@@ -130,7 +130,7 @@ public checkOutBook(int id, String title) {
   public class Dog extends Pet { }
   ```
 
-  - **Superclass**
+- **Superclass**
 
   A class that can be extended to create subclasses.
 
