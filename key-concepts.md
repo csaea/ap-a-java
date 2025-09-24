@@ -112,6 +112,7 @@
   ```
 
 - **Dot Operator**
+
   The dot between a variable and a method. Used to call a method in a class.
 
   ```java
