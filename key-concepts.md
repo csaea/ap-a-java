@@ -20,20 +20,23 @@
 
 - **Attributes**
 
-  Data related to an instance of a class. Stored in variables.
+  Attributes are found in variables that hold data for each instance of a class.
 
   ```java
+  private int id;
   private String title;
-  private String author;
+  private float price;
+  private boolean checkedOut;
   ```
 
 - **Behaviors**
 
-  What instances of a class can *do*. Found in methods.
+  Behaviors are what instances of a class can *do*, found in methods.
 
   ```java
-  public void printTitle() {
-      System.out.println(title);
+  public void checkOutBook(id) {
+      checkedOut = true;
+      System.out.println("Book is checked out);
   }
   ```
 
