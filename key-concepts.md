@@ -153,7 +153,8 @@
   ```java
   public class Main {
       public static void main(String[] args) {
-          Dog dog = new Dog();
+          Book myBook = new Book();
+          myBook.checkOut(32452, "Catch-22")
       }
   }
   ```
