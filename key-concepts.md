@@ -1,7 +1,5 @@
 # Concepts in Object-Oriented Programming (OOP) for Java
 
-Definitions edited by M Harrell, sourced from AP CS A and code.org.
-
 - **Class**
  
   Implementation (like a blueprint or a template) for creating attributes and behaviors of an object.  
