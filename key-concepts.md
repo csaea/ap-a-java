@@ -5,8 +5,9 @@
   Implementation (like a blueprint or a template) for creating attributes and behaviors of an object.  
   ```java
   public class Book {
-      private String title;
-      private String author;
+      //attribute fields
+      //constructor
+      //behaviors
   }
   
 - **Object**
