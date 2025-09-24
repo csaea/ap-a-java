@@ -34,7 +34,7 @@
   Behaviors are what instances of a class can *do*, found in methods.
 
   ```java
-  public void checkOutBook(id) {
+  public void checkOutBook(int id) {
       checkedOut = true;
       System.out.println("Book is checked out);
   }
@@ -55,7 +55,7 @@
   A named set of instructions to perform a task
 
   ```java
-  public checkOutBook(int id, String title) {
+  public checkOutBook(int id) {
   //behavior of method
   }
   ```
