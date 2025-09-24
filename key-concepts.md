@@ -78,21 +78,21 @@
   public class Book { } //only concerned with creating book objets
   ```
 
+- **Encapsulation**
+
+  Hiding details inside a class and only showing what is necessary. Protects the object through access control to the data.
+
+  ```java
+  private String title; // private attribute, only avaible to the class its written in.
+  public String getTitle() { return title; } // public getter, accessible through inheritance.
+  ```
+
 - **Package**
 
-  A way to group related classes together.
+  A group of related classes with a shared namespace.
 
   ```java
   package com.thelibraryproject.libraryapp;
-  ```
-
-- **Encapsulation**
-
-  Hiding details inside a class and only showing what is necessary. Protects the object from interference and controls access to the data.
-
-  ```java
-  private String title; // private attribute
-  public String getTitle() { return title; } // public getter
   ```
 
 - **Parameter**
@@ -128,10 +128,10 @@
 
 - **Inheritance**
 
-  OOP principle where a subclass inherits the attributes and behaviors of a superclass.
+  OOP principle where a subclass may inherit the attributes and behaviors of a superclass.
 
   ```java
-  public class Dog extends Pet { }
+  public class Dog extends Pet { } //now Dog can run methods and access attributes located in its superclass, Pet. 
   ```
 
 - **Superclass**
