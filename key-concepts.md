@@ -46,6 +46,14 @@
       this.author = author;
   }
   ```
+- **Method**
+A named set of instructions to perform a task
+
+```java
+public checkOutBook(int id, String title) {
+  //behavior of method
+}
+```
 
 - **Class Header**
 
@@ -60,9 +68,9 @@
   Keeping different parts of a program focused on their own tasks, so code is easier to manage.
 
   ```java
-  public class Book { }
-  public class Library { }
-  public class Patron { }
+  public class Main { } //only concerned with running the program and testing
+  public class Library { } //only concerned with creating library objects
+  public class Book { } //only concerned with creating book objets
   ```
 
 - **Package**
@@ -98,9 +106,16 @@
   myBook.setTitle("1984"); // "1984" is the argument
   ```
 
+- **Dot Operator**
+  The dot between a variable and a method. Used to call a method in a class.
+
+  ```java
+  myBook.getAuthor(); 
+  ```
+
 - **Logic Error**
 
-  Occurs when a program runs without crashing, but behaves in an incorrect or unexpected way.
+  Occurs when a program runs without crashing, but behaves in an incorrect or unexpected way. Human error.
 
   ```java
   int average = (10 + 20) / 3; // incorrect calculation
@@ -135,7 +150,7 @@
   The class that contains the `main` method -- often Main.java -- the entry point of any Java program.
 
   ```java
-  public class PetTester {
+  public class Main {
       public static void main(String[] args) {
           Dog dog = new Dog();
       }
@@ -147,7 +162,7 @@
   Consists of a method's name and its parameter list.
 
   ```java
-  public void setTitle(String title) { ... } // method signature = setTitle(String)
+  setTitle(int id, String title)
   ```
 
 - **String Literal**
@@ -185,5 +200,9 @@
       System.out.println(title);
   }
   ```
+  
+
+
+  
 
 <small>Definitions edited by M Harrell, sourced from AP CS A, code.org, and McGraw Hill. Examples by M Harrell</small>
