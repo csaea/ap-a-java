@@ -181,7 +181,7 @@
 
 - **Return**
 
-  To exit a method and `return` to the point in the program that called it. Often providing a value.
+  To exit a method and `return` to the point in the program that called it. Often providing a value, but not always.
 
   ```java
   public String getTitle() {
@@ -194,7 +194,9 @@
   The type of value returned by a method before it completes its execution and exits.
 
   ```java
-  public String getTitle() { return title; } // return type = String
+  public String getTitle() {   // return type = String
+      return title;
+  } 
   ```
 
 - **Void**
