@@ -1,14 +1,13 @@
 # Concepts in Object-Oriented Programming (OOP) for Java
 
-Definitions edited by M Harrell, sourced from AP CS A and code.org.
-
 - **Class**
  
   Implementation (like a blueprint or a template) for creating attributes and behaviors of an object.  
   ```java
   public class Book {
-      private String title;
-      private String author;
+      //attribute fields
+      //constructor
+      //behaviors
   }
   
 - **Object**
@@ -21,20 +20,23 @@ Definitions edited by M Harrell, sourced from AP CS A and code.org.
 
 - **Attributes**
 
-  Data related to an instance of a class. Stored in variables.
+  Attributes are found in variables that hold data for each instance of a class.
 
   ```java
+  private int id;
   private String title;
-  private String author;
+  private float price;
+  private boolean checkedOut;
   ```
 
 - **Behaviors**
 
-  What instances of a class can *do*. Found in methods.
+  Behaviors are what instances of a class can *do*, found in methods.
 
   ```java
-  public void printTitle() {
-      System.out.println(title);
+  public void checkOutBook(int id) {
+      checkedOut = true;
+      System.out.println("Book is checked out);
   }
   ```
 
@@ -46,6 +48,15 @@ Definitions edited by M Harrell, sourced from AP CS A and code.org.
   public Book(String title, String author) {
       this.title = title;
       this.author = author;
+  }
+  ```
+- **Method**
+
+  A named set of instructions to perform a task
+
+  ```java
+  public checkOutBook(int id) {
+  //behavior of method
   }
   ```
 
@@ -62,26 +73,26 @@ Definitions edited by M Harrell, sourced from AP CS A and code.org.
   Keeping different parts of a program focused on their own tasks, so code is easier to manage.
 
   ```java
-  public class Book { }
-  public class Library { }
-  public class Patron { }
-  ```
-
-- **Package**
-
-  A way to group related classes together.
-
-  ```java
-  package com.thelibraryproject.libraryapp;
+  public class Main { } //only concerned with running the program and testing
+  public class Library { } //only concerned with creating library objects
+  public class Book { } //only concerned with creating book objets
   ```
 
 - **Encapsulation**
 
-  Hiding details inside a class and only showing what is necessary. Protects the object from interference and controls access to the data.
+  Hiding details inside a class and only showing what is necessary. Protects the object through access control to the data.
 
   ```java
-  private String title; // private attribute
-  public String getTitle() { return title; } // public getter
+  private String title; // private attribute, only avaible to the class its written in.
+  public String getTitle() { return title; } // public getter, accessible through inheritance.
+  ```
+
+- **Package**
+
+  A group of related classes with a shared namespace.
+
+  ```java
+  package com.thelibraryproject.libraryapp;
   ```
 
 - **Parameter**
@@ -100,9 +111,17 @@ Definitions edited by M Harrell, sourced from AP CS A and code.org.
   myBook.setTitle("1984"); // "1984" is the argument
   ```
 
+- **Dot Operator**
+
+  The dot between a variable and a method. Used to call a method in a class.
+
+  ```java
+  myBook.getAuthor(); 
+  ```
+
 - **Logic Error**
 
-  Occurs when a program runs without crashing, but behaves in an incorrect or unexpected way.
+  Occurs when a program runs without crashing, but behaves in an incorrect or unexpected way. Human error.
 
   ```java
   int average = (10 + 20) / 3; // incorrect calculation
@@ -110,13 +129,13 @@ Definitions edited by M Harrell, sourced from AP CS A and code.org.
 
 - **Inheritance**
 
-  OOP principle where a subclass inherits the attributes and behaviors of a superclass.
+  OOP principle where a subclass may inherit the attributes and behaviors of a superclass.
 
   ```java
-  public class Dog extends Pet { }
+  public class Dog extends Pet { } //now Dog can run methods and access attributes located in its superclass, Pet. 
   ```
 
-  - **Superclass**
+- **Superclass**
 
   A class that can be extended to create subclasses.
 
@@ -137,9 +156,10 @@ Definitions edited by M Harrell, sourced from AP CS A and code.org.
   The class that contains the `main` method -- often Main.java -- the entry point of any Java program.
 
   ```java
-  public class PetTester {
+  public class Main {
       public static void main(String[] args) {
-          Dog dog = new Dog();
+          Book myBook = new Book();
+          myBook.checkOut(32452, "Catch-22")
       }
   }
   ```
@@ -149,7 +169,7 @@ Definitions edited by M Harrell, sourced from AP CS A and code.org.
   Consists of a method's name and its parameter list.
 
   ```java
-  public void setTitle(String title) { ... } // method signature = setTitle(String)
+  setTitle(int id, String title)
   ```
 
 - **String Literal**
@@ -162,7 +182,7 @@ Definitions edited by M Harrell, sourced from AP CS A and code.org.
 
 - **Return**
 
-  To exit a method and `return` to the point in the program that called it. Often providing a value.
+  To exit a method and `return` to the point in the program that called it. Often providing a value, but not always.
 
   ```java
   public String getTitle() {
@@ -175,7 +195,9 @@ Definitions edited by M Harrell, sourced from AP CS A and code.org.
   The type of value returned by a method before it completes its execution and exits.
 
   ```java
-  public String getTitle() { return title; } // return type = String
+  public String getTitle() {   // return type = String
+      return title;
+  } 
   ```
 
 - **Void**
@@ -187,5 +209,9 @@ Definitions edited by M Harrell, sourced from AP CS A and code.org.
       System.out.println(title);
   }
   ```
+  
+
+
+  
 
 <small>Definitions edited by M Harrell, sourced from AP CS A, code.org, and McGraw Hill. Examples by M Harrell</small>
