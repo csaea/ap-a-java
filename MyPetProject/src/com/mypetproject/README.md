@@ -6,11 +6,11 @@ In terminal, make sure you navigate to the `src` directory. (Use `ls` to list al
 
 1. Compile all classes in a package:
 
-javac com/mypetproject/*.java
+      javac com/mypetproject/*.java
 
 2. Run the program via Main
 
-java com.mypetproject.Main
+      java com.mypetproject.Main
 
 Better practice: 
 Compile all java files and put them in their own directory named `out`:
