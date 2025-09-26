@@ -7,10 +7,10 @@ public class Main {
     //main method: the doorway to your java program, which the JVC needs to run your code.
     public static void main(String[] args) {
 
-        Pet newAnimal = new Pet("cat");
+        Pet newAnimal = new Pet("cat", 1);
         newAnimal.getSpecies();
 
-        Cat newCat = new Cat(7, "orange", "cat");
+        Cat newCat = new Cat(7, "orange", "cat", 1);
         newCat.meow();
 
     }
