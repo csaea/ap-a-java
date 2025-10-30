@@ -35,7 +35,6 @@ public class Overflow {
 
         double tiny = Double.MIN_VALUE; // close to Double.MIN_VALUE
 
-        
         // Why?
         // When a value’s magnitude drops below what 52 bits of precision can encode,
         // it collapses quietly to zero. A vanishing act in binary.
