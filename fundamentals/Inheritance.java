@@ -1,6 +1,7 @@
-// If you want to create a superclass/subclass structure, use inheritance to directly share attributes *down* from super to sub classes.
+// If you want to create a superclass/subclass structure, use INHERITANCE to directly share attributes *down* from super to sub classes.
 // Use the 'extends' keyword to establish the super/sub relationship
-// In the subclass, you can call the special method super() to access the superclass.
+// Now the sub class can access public attributes and methods from the super class!
+// To test this, delete "extends A" from class B and read the errors.
 
 class A {
     public String msg = "I am a public message from class A.";
@@ -28,3 +29,6 @@ public class Inheritance {
         b.goodbye();   // prints: Hello from Class B
     }
 }
+
+
+// Side note: If your subclass has a constructor, you can call: super() to use the with the correct number of paramaters.
