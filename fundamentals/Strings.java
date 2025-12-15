@@ -40,7 +40,7 @@ public class Strings {
         System.out.println("Contains 'Squidward'? " + character.contains("Squidward"));
         System.out.println("Replaced name: " + character.replace("spOngEBOB", "sqUidWaRD"));
 
-        
+        // ESCAPED CHARACTERS
         System.out.println("Name:\tAda Lovelace\nRole:\tFirst Programmer Ever\nYear:\t1843");
 
     }   
