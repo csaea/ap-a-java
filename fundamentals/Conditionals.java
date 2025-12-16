@@ -72,9 +72,9 @@ public class Conditionals {
  // Tell them if it is even or odd.
 
 // Challenge 3:
-        // Ask the user for an integer grade (0-100).
-        // Print a letter grade: A, B, C, D, F
-        // Remember to parse the string to integer. 
+// Ask the user for an integer grade (0-100).
+// Print a letter grade: A, B, C, D, F
+// Remember to parse the string to integer. 
     }
     
 }
