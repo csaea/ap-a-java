@@ -3,18 +3,18 @@
 public class Loops {
 
 	public static void main(String[] args) {
-		// for loops contain 3 parts
-		// First part contains a init of a variable
-		// This varible has to be able to be compared to increase or decrease
-		// i.e. int, char, etc.
-
-		// Along with this it needs a comparision 
-		// and to increase or decrease
+		// for loops contain 3 parts:
+		// First part: contains a init of a variable
+		  // This varible has to be able to be compared to increase or decrease
+		  // i.e. int, char, etc.
+		// Second part: Along with this it needs a comparision boolean
+		// Third part: declare whether or not to increase or decrease the iteration
 		// So,
 
 		for (int index = 0; index < 5; index++) {
 			System.out.print(index);
 		}
+
 		System.out.println();
 
 		// For this loop it starts at 0 and goes up to 4 for 5 indexes
@@ -25,6 +25,7 @@ public class Loops {
 		for (int index = 0; index <= 5; index++) {
 			System.out.print(index);
 		}
+
 		System.out.println();
 
 		// The starting index can also change 
@@ -33,6 +34,7 @@ public class Loops {
 		for (int index = 2; index < 5; index++) {
 			System.out.print(index);
 		}
+
 		System.out.println();
 
 		// Along with this the iteration can also change
@@ -41,18 +43,21 @@ public class Loops {
 		for (int index = 5; index > 2; index--) {
 			System.out.print(index);
 		}
+
 		System.out.println();
 
 		// decrease by 2 each time
 		for (int index = 6; index > 0; index -= 2) {
 			System.out.print(index);
 		}
+
 		System.out.println();
 
 		// increase by 2 each time
 		for (int index = 2; index < 10; index += 2) {
 			System.out.print(index);
 		}
+
 		System.out.println();
 
 		// For loops can also be nested, so for each i index it iterates j times
@@ -81,6 +86,7 @@ public class Loops {
 			System.out.print(counter);
 			counter++;
 		}
+
 		System.out.println();
 
 		// 3 loop control commands
@@ -95,6 +101,7 @@ public class Loops {
 			}
 			System.out.print(value + " ");
 		}
+
 		System.out.println();
 
 		// break stops the loop entirely
@@ -105,6 +112,7 @@ public class Loops {
 			}
 			System.out.print(value);
 		}
+        
 		System.out.println();
 
 		// return works for break but it is much stronger
