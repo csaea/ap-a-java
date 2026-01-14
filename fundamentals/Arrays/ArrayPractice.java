@@ -35,5 +35,34 @@ public class ArrayPractice {
         }
         System.out.println("ALGO 3 - All elements the same? " + allSame);
 
+
+
+
+        // Write the code that will find and display the median (middle number) of an array. 
+        // Note: If the array has an even number of elements, average the middle two numbers. 
+
+        int[] data = {1, 2, 4, 6, 7, 9, 10};
+        double midpoint = (data.length)/2;
+        double median = 0;
+        if (data.length % 2 == 1){
+            median = data[(int) midpoint];
+        } else {
+            int midnum1 = data[(int) (midpoint - 1)];
+            int midnum2 = data[(int) midpoint];
+            median = (midnum1 + midnum2)/2;
+        }
+        System.out.println("Median: " + median);
+
+        int[] med = new int[]{13, 4, 12, 9, 3, 4};
+        int len = med.length;
+        if (len % 2 == 1){
+            System.out.println(med[len/2]);
+        }
+        else{
+            System.out.println( ((med[(len/2)-1]) + (med[len/2]))  / 2.0  );
+        }
+
+
+
     }
 }
