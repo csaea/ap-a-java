@@ -1,3 +1,7 @@
+//Below is one solution to the TicTacToe challenge. 
+//Note this isn't the *best* solution out there, but it is meant 
+// to highlights 2D arrays in java. 
+
 package challenges;
 
 import java.util.Random;
@@ -19,17 +23,19 @@ public class TicTacToe {
             for (int col = 0; col < 3; col++) {
 
                 // int placeX = rand.nextInt(2);
-                boolean placeX = rand.nextBoolean();
+                boolean randBool = rand.nextBoolean();
 
-                if (placeX && xCounter < 5) {
+                //if randBool is 'true' place an X
+                if (randBool && xCounter < 5) {
                     board[row][col] = 'X';
                     xCounter++;
-                } else if (!placeX && oCounter < 4) {
+                //if randBool is 'false' place an O
+                } else if (!randBool && oCounter < 4) {
                     board[row][col] = 'O';
                     oCounter++;
                 } 
                 //In case X or O already hits the counter, 
-                //    we need to still fill out the rest of the board
+                // fill out the rest of the board
                 else if (xCounter < 5) { 
                     board[row][col] = 'X';
                     xCounter++;
