@@ -3,9 +3,18 @@ import java.util.Arrays;
 public class Sorting {
     public static void main(String[] args) {
 
+        //pre-lesson, swapping:
+        int[] swapNumbers = {9, 3};
+
+        //do each sorting algorithm one at a time
         int[] selectionNumbers = {9, 3, 1, 5, 10, 2, 4, 8, 7, 6};
         int[] insertionNumbers = {9, 3, 1, 5, 10, 2, 4, 8, 7, 6};
         int[] mergeNumbers = {9, 3, 1, 5, 10, 2, 4, 8, 7, 6};
+
+        System.out.println("Unswapped Nums: " + Arrays.toString(selectionNumbers));
+        
+        SortingAlgorithms swapNumb = new SortingAlgorithms(swapNumbers);
+        swapNumb.swapNumbers();
 
         System.out.println("Unsorted Lists: " + Arrays.toString(selectionNumbers));
 
@@ -31,11 +40,20 @@ public class Sorting {
 
 class SortingAlgorithms {
 
-    //only attribute will be the list that is passed down into this class from the tester class
+    //this attribute will be the Array that is passed down into this class from the tester class
     private int[] list;
 
     public SortingAlgorithms(int[] list) {
         this.list = list;
+    }
+
+    public void swapNumbers() {
+        //pre-lesson to practice simply swapping two values in an array
+
+        int temp = list[0];
+        list[0] = list[1];
+        list[1] = temp;
+
     }
 
     public void selectionSort() {
