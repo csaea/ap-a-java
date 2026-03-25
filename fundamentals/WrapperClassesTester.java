@@ -10,7 +10,6 @@ public class WrapperClassesTester {
         Wrapper.demoInteger();
         Wrapper.demoBoolean();
         Wrapper.autoBoxingDemo();
-
     }
 }
 
