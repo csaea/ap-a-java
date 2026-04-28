@@ -15,7 +15,7 @@ public class Sorting {
 
         SortingAlgorithms selection = new SortingAlgorithms(selectionNumbers);
         selection.selectionSort();
-        System.out.println("Selection SOrt:" + Arrays.toString(selectionNumbers));
+        System.out.println("Selection Sort:" + Arrays.toString(selectionNumbers));
 
     }
 }
@@ -60,10 +60,7 @@ class SortingAlgorithms {
             int temp = list[i]; //9
             list[i] = list[minIndex]; // 9 <-- 3
             list[minIndex] = temp;
-
             }
-
         }
-
 }
 
