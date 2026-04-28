@@ -17,6 +17,8 @@ public class Sorting {
         selection.selectionSort();
         System.out.println("Selection Sort:" + Arrays.toString(selectionNumbers));
 
+        int[] insertionNumbers = {9, 3, 1, 5, 10, 2, 4, 8, 7, 6};
+
     }
 }
 
@@ -31,20 +33,24 @@ class SortingAlgorithms {
             this.list = newList;
         } 
 
-        //behavior
-       // int[] swapNumbers = {9, 3}; 
+        //BEHAVIORS
+
+        // int[] swapNumbers = {9, 3}; 
         public void swapNumbers() {
             int temp = list[0]; //9
             list[0] = list[1]; // 9 <-- 3
             list[1] = temp;
         }   
 
+        // ------------- SELECTION SORT --------------
+        // int[] selectionNumbers = {9, 3, 1, 5, 10, 2, 4, 8, 7, 6};
+        
         public void selectionSort() {
 
             int n = list.length;
             System.out.println("length of list: " + n);
 
-            //out loop
+            //outer loop
             for (int i = 0; i < n; i++) {
                 
                 int minIndex = i;
@@ -57,10 +63,16 @@ class SortingAlgorithms {
                     }
                 }
 
-            int temp = list[i]; //9
-            list[i] = list[minIndex]; // 9 <-- 3
-            list[minIndex] = temp;
+            int temp = list[i]; // save (ie cache) current index's value in temp
+            list[i] = list[minIndex]; // copy min value of array to current index position 
+            list[minIndex] = temp; // move the current index value (the greater number of the two) to the previous position of min value
             }
+        }
+
+
+
+            }
+
         }
 }
 
