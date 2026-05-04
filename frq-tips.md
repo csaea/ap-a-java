@@ -25,7 +25,7 @@
 ### When Stuck
 - Write the **method signature** and a comment of intent — never leave blank.
 - Code the **structure** (loop + if + return) before the details. Algorithm points reward correct sequence even with bugs.
-- Move on at 22 minutes; return with fresh eyes.
+- Move on at 20 minutes; return with fresh eyes.
 
 ---
 
@@ -65,38 +65,6 @@
 
 ---
 
-### Math & Logic Toolkit
-- **Modulo `%`:**
-  - Wrap-around: `(day + offset) % 7`
-  - Parity: `n % 2 == 0` (even)
-  - Divisibility: `a % b == 0`
-  - Last digit: `n % 10`
-- **Integer division** truncates: `5 / 2 == 2`. For ceiling division: `(a + b - 1) / b`.
-- **Min / Max:** `Math.min(a, b)`, `Math.max(a, b)`. For min-of-many, initialize tracker to first element (or `Integer.MAX_VALUE`).
-- **Random integer in [a, b]:** `(int)(Math.random() * (b - a + 1)) + a`
-- **Compound conditions:** `&&` short-circuits — put cheap/safe checks first (e.g., `i < arr.length && arr[i] > 0`).
-
----
-
-### Essential Java Syntax
-**Strings**
-- Comparison: `s1.equals(s2)` — never `==`
-- One character: `s.substring(i, i+1)` (preferred — returns a String)
-- Search: `s.indexOf("x")` returns -1 if absent
-- Length: `s.length()`
-
-**Arrays**
-- Length: `arr.length` (no parens)
-- Access: `arr[i]`, 2D: `arr[r][c]`
-- 2D Dimensions: `arr.length` = rows, `arr[0].length` = cols
-
-**ArrayList**
-- Size: `list.size()`
-- Read: `list.get(i)`
-- Replace in place: `list.set(i, v)` — **not `add`**
-- Insert / append: `list.add(v)` or `list.add(i, v)`
-- Remove: `list.remove(i)`
-
 **Class skeleton**
 ```java
 public class Foo {
@@ -128,3 +96,36 @@ public class Foo {
     }
 }
 ```
+---
+
+### Math & Logic Toolkit
+- **Modulo `%`:**
+  - Wrap-around: `(day + offset) % 7`
+  - Parity: `n % 2 == 0` (even)
+  - Divisibility: `a % b == 0`
+  - Last digit: `n % 10`
+- **Integer division** truncates: `5 / 2 == 2`. For ceiling division: `(a + b - 1) / b`.
+- **Min / Max:** `Math.min(a, b)`, `Math.max(a, b)`. For min-of-many, initialize tracker to first element (or `Integer.MAX_VALUE`).
+- **Random integer in [a, b]:** `(int)(Math.random() * (b - a + 1)) + a`
+- **Compound conditions:** `&&` short-circuits — put cheap/safe checks first (e.g., `i < arr.length && arr[i] > 0`).
+
+---
+
+### Essential Java Syntax
+**Strings**
+- Comparison: `s1.equals(s2)` — never `==`
+- One character: `s.substring(i, i+1)` (preferred — returns a String)
+- Search: `s.indexOf("x")` returns -1 if absent
+- Length: `s.length()`
+
+**Arrays**
+- Length: `arr.length` (no parens)
+- Access: `arr[i]`, 2D: `arr[r][c]`
+- 2D Dimensions: `arr.length` = rows, `arr[0].length` = cols
+
+**ArrayList**
+- Size: `list.size()`
+- Read: `list.get(i)`
+- Replace in place: `list.set(i, v)` — **not `add`**
+- Insert / append: `list.add(v)` or `list.add(i, v)`
+- Remove: `list.remove(i)`
