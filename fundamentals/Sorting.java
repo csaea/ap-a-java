@@ -3,16 +3,14 @@ import java.util.Arrays;
 /*
  * SORTING ALGORITHMS REFERENCE  -  AP CS A
  * ----------------------------------------
- * This file demonstrates the three sorting algorithms in the AP CS A subset:
+ * This file demonstrates the three sorting algorithms found in AP CS A:
  *      1. Selection Sort
  *      2. Insertion Sort
  *      3. Merge Sort
  *
- * For each algorithm you should be able to:
+ * On the exam, you should be able to:
+ *      - Understand the "big picture" of each algorithm.
  *      - Trace the algorithm by hand on a small array.
- *      - State its time complexity (Big-O) for best, average, and worst cases.
- *      - State its space complexity.
- *      - Identify which kind of input each algorithm handles efficiently.
  *
  * Conventions used throughout this file:
  *      - "n" = the number of elements in the array (list.length).
@@ -97,14 +95,9 @@ class SortingAlgorithms {
     /* =================================================================
      * SELECTION SORT
      * =================================================================
-     * IDEA
+     * BIG PICTURE
      *      Repeatedly find the smallest value in the unsorted region and
      *      place it at the front of that region by swapping.
-     *
-     * LOOP INVARIANT
-     *      After iteration i of the outer loop, the first (i+1) elements of
-     *      the array are the (i+1) smallest values, already in sorted order.
-     *      The sorted region therefore grows by exactly one slot per pass.
      * ================================================================= */
     public void selectionSort() {
         // Cache the length once. 
@@ -147,7 +140,7 @@ class SortingAlgorithms {
     /* =================================================================
      * INSERTION SORT
      * =================================================================
-     * IDEA
+     * BIG PICTURE
      *      Treat the array as two regions: a sorted region on the left
      *      and an unsorted region on the right. Take the first unsorted
      *      value (call it the "key") and shift larger values one slot to
@@ -155,11 +148,6 @@ class SortingAlgorithms {
      *      drop the key into that slot.
      *
      *      This is how most people sort a hand of playing cards.
-     *
-     * LOOP INVARIANT
-     *      After iteration i of the outer loop, the first (i+1) elements
-     *      are sorted relative to one another (though not yet relative to
-     *      elements still in the unsorted region).
      * ================================================================= */
     public void insertionSort() {
         int n = list.length;
