@@ -21,6 +21,8 @@ import java.util.Arrays;
  *      - The "sorted region" grows on the LEFT side of the array as we work,
  *        and the "unsorted region" shrinks on the right.
  */
+
+
 public class Sorting {
     public static void main(String[] args) {
         // Pre-lesson: simply swapping two values in an array.
@@ -28,7 +30,7 @@ public class Sorting {
         // would otherwise overwrite the value we still need on the next line.
         int[] swapNumbers = {9, 3};
 
-        // Each algorithm receives its own copy of the same starting data 
+        // For these examples, each algorithm receives its own copy of the same starting data 
         int[] selectionNumbers = {9, 3, 1, 5, 10, 2, 4, 8, 7, 6};
         int[] insertionNumbers = {9, 3, 1, 5, 10, 2, 4, 8, 7, 6};
         int[] mergeNumbers     = {9, 3, 1, 5, 10, 2, 4, 8, 7, 6};
@@ -103,16 +105,6 @@ class SortingAlgorithms {
      *      After iteration i of the outer loop, the first (i+1) elements of
      *      the array are the (i+1) smallest values, already in sorted order.
      *      The sorted region therefore grows by exactly one slot per pass.
-     *
-     * COMPLEXITY
-     *      Time:    O(n^2) for BEST, AVERAGE, and WORST cases. Selection
-     *               sort performs the same number of comparisons regardless
-     *               of input order, so a pre-sorted array runs no faster
-     *               than a random one.
-     *      Space:   O(1). Sorts in place using only the temp swap variable.
-     *      Stable?  No. A swap can leap an equal value over another equal
-     *               value, changing their relative order.
-
      * ================================================================= */
     public void selectionSort() {
         // Cache the length once. 
@@ -168,23 +160,6 @@ class SortingAlgorithms {
      *      After iteration i of the outer loop, the first (i+1) elements
      *      are sorted relative to one another (though not yet relative to
      *      elements still in the unsorted region).
-     *
-     * COMPLEXITY
-     *      Time:    Best     O(n)   - already-sorted input. The inner
-     *                                 while-loop exits immediately every
-     *                                 iteration.
-     *               Worst    O(n^2) - reverse-sorted input. Every element
-     *                                 must shift all the way to the front.
-     *               Average  O(n^2).
-     *      Space:   O(1). Sorts in place.
-     *      Stable?  YES. The inner condition uses strict >, so equal
-     *               values are never moved past one another.
-     *
-     * WHEN TO USE
-     *      Small arrays, or arrays that are already nearly sorted. Many
-     *      industrial sorting libraries (including Java's TimSort) fall
-     *      back to insertion sort once a recursive sort has reduced
-     *      sub-arrays to a small size.
      * ================================================================= */
     public void insertionSort() {
         int n = list.length;
@@ -227,6 +202,10 @@ class SortingAlgorithms {
         }
     }
 
+
+
+
+
     /* =================================================================
      * MERGE SORT
      * =================================================================
@@ -241,24 +220,6 @@ class SortingAlgorithms {
      *          mergeSortHelper()   recursive splitter.
      *          merge()             combines two adjacent sorted sub-arrays
      *                              into one sorted sub-array.
-     *
-     * COMPLEXITY
-     *      Time:    O(n log n) for BEST, AVERAGE, and WORST cases.
-     *                  "log n" because we halve the array log2(n) times
-     *                          before reaching the base case.
-     *                  "n"     because each level of recursion does O(n)
-     *                          total work merging the pieces back together.
-     *      Space:   O(n). Merge sort is NOT in-place; the merge step uses
-     *               an auxiliary array. This extra memory is the trade-off
-     *               for guaranteed n log n performance.
-     *      Stable?  YES, because merge() uses <= when choosing from the
-     *               left half (see the comparison in merge()).
-     *
-     * WHEN TO USE
-     *      Large data sets, linked lists, and any situation where the
-     *      guaranteed n log n upper bound matters more than memory
-     *      overhead. Java's Arrays.sort() for objects uses a merge sort
-     *      variant called TimSort.
      * ================================================================= */
     public void mergeSort() {
         // Public wrapper. The recursive version requires extra parameters
