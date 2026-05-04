@@ -17,8 +17,6 @@ public class Sorting {
         selection.selectionSort();
         System.out.println("Selection Sort:" + Arrays.toString(selectionNumbers));
 
-        int[] insertionNumbers = {9, 3, 1, 5, 10, 2, 4, 8, 7, 6};
-
     }
 }
 
