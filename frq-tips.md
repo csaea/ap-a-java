@@ -1,41 +1,41 @@
-## AP CSA FRQ Cheat Sheet
+## AP CSA FRQ Tips and Strategies
 
 **Section II of the CS AP A Exam:** 4 FRQs · 90 min · ~22 min each · Java Quick Reference is provided
 
-### The Four Questions (and what you'll coding)
+### The Four Question Types (and what you'll coding)
 1. **Methods & Control** (2 parts) —
 - you'll be given classes, data, and helper methods to use. You'll write two methods to solve a logical problem stated within the question. You'll *control* the data with conditionals, loops, String method, etc.
 2. **Class Writing** — constructor, method, instance variables
-- you'll be given a description of an object: what data it tracks and what it should do. You'll write the class — private instance variables, a constructor that initializes them, and at least one method. You'll *encapsulate* the data and expose behavior through methods.
+- you'll be given a description of an object: what data it tracks and what it should do. You'll write the class — private instance variables, a constructor that initializes them, and at least one method. You'll *encapsulate* the data with the use of private and public keywords, and expose behavior through getter and setters methods.
 3. **ArrayList** — traverse / filter / modify
-- you'll be given an existing class with an ArrayList field already declared, plus method specs. You'll write one method that walks the list. You'll *manipulate* elements with `.get()`, `.set()`, `.add()`, `.remove()`.
+- you'll be given an existing class with an ArrayList field already declared, plus method specs. You'll write one method that traverses (loops) over the list. You'll *manipulate* elements with `.get()`, `.set()`, `.add()`, `.remove()`.
 4. **2D Array** — nested loops
 - you'll be given a grid (a 2D array of values or objects) and a method spec. You'll write a method that walks the grid with nested loops. You'll *navigate* by row and column to count, compare, or modify cells.
 
 ---
 
 ### How to Read the Prompt
-- **Read twice.** First for the story, second for notes. Highlight everthing you might need.
-- **The classes they give you** = your inventory of tools. Assume you will use every listed attribte/data and method they give you.
+- **Read twice.** First for the story, second to take notes. Highlight everthing you might need.
+- **The classes they give you** = your inventory of tools. Use them! Assume you will use every listed attribute/data and method they give you.
 - `/* implementation not shown */` → **you'll probably need to call it. No need to rewrite it.**
-- **Circle:** return type, parameters, provided method names, preconditions.
+- **Remember:** the return type, parameters, provided method names, preconditions. Do *not* print anything to console. Only return!
 
 ---
 
 ### When Stuck
-- Write the **method signature** and a comment of intent — never leave blank.
-- Code the **structure** (loop + if + return) before the details. Algorithm points reward correct sequence even with bugs.
-- Move on at 20 minutes; return with fresh eyes.
+- Write the **method signature** and a comment of what *should* go in the method. Never leave blank.
+- Code the **structure** (variables + if/else + loop + return) before the details. Algorithm points reward correct sequence even with bugs.
+- Move on at 20 minutes. Return with fresh eyes.
 
 ---
 
-### Distilling the Task: Pattern Triggers
+### Clues in the Question
 | When you see... | Reach for... |
 |---|---|
 | A list, array, String, or ArrayList | a **loop** |
 | "matches," "contains," "greater than," "is equal to" | an **`if`** |
 | An object given to you | the **dot operator** (`obj.method()`) |
-| Two related operations ("find and act") | a **helper method** |
+| Two related operations | a **helper method** |
 | "How many...," "count," "total" | an **accumulator** (`int count = 0;` outside loop, `count++` inside) |
 | "First / smallest / largest..." | a **tracker variable** initialized before the loop |
 | "Build a string / list of..." | initialize **empty**, append in loop |
@@ -44,24 +44,24 @@
 ---
 
 ### Iteration Techniques
-- **Standard forward:** `for (int i = 0; i < arr.length; i++)`
+- **Standard for loop:** `for (int i = 0; i < arr.length; i++)`
 - **Enhanced for** (read-only, no index needed): `for (String s : list)`
-- **Backward** (when removing from an ArrayList): `for (int i = list.size() - 1; i >= 0; i--)`
-- **2D row-major** (most common): outer = rows, inner = columns
+- **Backward** (in an ArrayList): `for (int i = list.size() - 1; i >= 0; i--)`
+- **2D row-major** (traverse rows first): outer = rows, inner = columns
   ```java
   for (int r = 0; r < arr.length; r++)
       for (int c = 0; c < arr[r].length; c++)
           // arr[r][c]
   ```
 - **Dimensions:** `arr.length` = rows · `arr[r].length` = cols in row `r` (use this over `arr[0].length` — safer if rows vary)
-- **Column-major** (walk columns first): swap the loops — outer is `c`, inner is `r`
+- **2D Column-major** (walk columns first): swap the loops — outer is `c`, inner is `r`
 - **Backward traversal:** start at `arr.length - 1` and decrement (e.g., gravity / falling problems)
 - **Checking a neighbor** at `(r±1, c±1)` — guard the bounds first:
   ```java
   if (r >= 0 && r < arr.length && c >= 0 && c < arr[r].length)
   ```
 - **Counting matches in the grid:** declare `count` *outside both loops*, increment inside
-- **Don't assume square** — `rows == cols` only when the prompt says so
+- **Don't assume grid is a square** — `rows == cols` only when the prompt says so
 
 ---
 
