@@ -2,7 +2,6 @@ public class Recursion {
     public static void main(String[] args) {
 
     // tester class
-
     RecursionAlgos r = new RecursionAlgos();
     r.countDown(5);
 
@@ -27,7 +26,7 @@ class RecursionAlgos {
 
         System.out.println("stacking up n: " + n);
         countDown(n - 1);
-    // after we return, everthing AFTER the recusrive call can run:
+        // after we return, everthing AFTER the recusrive call can run:
         System.out.println("unstacking!" + n);
     
     }

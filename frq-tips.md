@@ -14,6 +14,21 @@
 
 ---
 
+```
+### General Tips
+- Read the method signature — return type and parameters tell you a lot.
+- Identify what the method should return before writing anything.
+- Check the "preconditions" — they tell you what you don't have to handle.
+- Expect to create 1–3 variables to get and store data.
+- For methods, you will on average write 1–2 loops and 1–2 conditionals, not more. 
+- All responses can be done in under 10 lines of code typically. Never more than 15 lines!
+- Focus on the logic the question is expecting you to answer — there is an efficient, relatively simple solution to each one.
+- Before submitting, verify your return statement. Never print!
+- Don't overthink it. Write the skeleteon of the algo first, then improve it with Java syntax.
+```
+
+---
+
 ### How to Read the Prompt
 - **Read twice.** First for the story, second to take notes. Highlight everthing you might need.
 - **The classes they give you** = your inventory of tools. Use them! Assume you will use every listed attribute/data and method they give you.
