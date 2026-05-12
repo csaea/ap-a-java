@@ -2,30 +2,27 @@
 
 **Section II of the CS AP A Exam:** 4 FRQs · 90 min · ~22 min each · Java Quick Reference is provided
 
-### The Four Question Types (and what you'll coding)
+### The Four Question Types (and what to expect)
 1. **Methods & Control** (2 parts) —
 - you'll be given classes, data, and helper methods to use. You'll write two methods to solve a logical problem stated within the question. You'll *control* the data with conditionals, loops, String method, etc.
 2. **Class Writing** — constructor, method, instance variables
 - you'll be given a description of an object: what data it tracks and what it should do. You'll write the class — private instance variables, a constructor that initializes them, and at least one method. You'll *encapsulate* the data with the use of private and public keywords, and expose behavior through getter and setters methods.
 3. **ArrayList** — traverse / filter / modify
-- you'll be given an existing class with an ArrayList field already declared, plus method specs. You'll write one method that traverses (loops) over the list. You'll *manipulate* elements with `.get()`, `.set()`, `.add()`, `.remove()`.
+- you'll be given an existing class with an ArrayList field already declared, plus method specs. You'll write one method that traverses (loops) over the list. You'll *manipulate* elements with `.get(index)`, `.set()`, `.add()`, `.remove()`.
 4. **2D Array** — nested loops
 - you'll be given a grid (a 2D array of values or objects) and a method spec. You'll write a method that walks the grid with nested loops. You'll *navigate* by row and column to count, compare, or modify cells.
 
 ---
 
-```
 ### General Tips
-- Read the method signature — return type and parameters tell you a lot.
-- Identify what the method should return before writing anything.
-- Check the "preconditions" — they tell you what you don't have to handle.
-- Expect to create 1–3 variables to get and store data.
-- For methods, you will on average write 1–2 loops and 1–2 conditionals, not more. 
-- All responses can be done in under 10 lines of code typically. Never more than 15 lines!
+- Read the method signature. Return type and parameters tell you a lot.
+- Check the "preconditions". They tell you what you don't have to handle.
+- Expect to write 1–4 variables to get, store, or update data.
+- For methods, you will on average write 1–2 loops and 1–2 conditionals. 
+- Solutions are typically less than 10 lines of code.
 - Focus on the logic the question is expecting you to answer — there is an efficient, relatively simple solution to each one.
 - Before submitting, verify your return statement. Never print!
 - Don't overthink it. Write the skeleteon of the algo first, then improve it with Java syntax.
-```
 
 ---
 
