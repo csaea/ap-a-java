@@ -1,4 +1,4 @@
-## AP CSA FRQ Tips and Strategies
+## AP CS A FRQ Strategies
 
 **Section II of the CS AP A Exam:** 4 FRQs · 90 min · ~22 min each · Java Quick Reference is provided
 
