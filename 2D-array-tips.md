@@ -2,7 +2,7 @@
 Mental model for declaring, traversing, and tracing rectangular arrays.
 
 ## 1. Mental model
-A 2D array is an *array of arrays*. Each row is itself a 1D array, and the outer array holds references to those rows.
+A 2D array is an *array of arrays*. Each row is itself a 1D array, and the outer array holds references to those rows as columns.
 
 ```
 int[][] grid = new int[3][4];   // 3 rows, 4 columns
@@ -53,7 +53,7 @@ for (int c = 0; c < arr[0].length; c++) {
 
 ## 5. Enhanced for loop (for-each)
 
-> Remember, when using enchanced for-loops, the outer variable is the row (a 1D array). The inner variable is each value in that row. **You cannot modify `arr` through `val`** — `val` is a copy. Use traditional, indexed loops to write/edit.
+> Remember, when using enchanced for-loops, you can only read the values, you can't modify anything. The outer variable is the row (a 1D array). The inner variable is each value in that row. 
 
 ```java
 for (int[] row : arr) {
