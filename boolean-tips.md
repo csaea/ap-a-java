@@ -80,9 +80,9 @@ Given `int x = 4; int y = -2; boolean b = true;`, evaluate:
 b && x > y + 5 || !b
 ```
 
-**Answer:** `false`.
+**Answer:** `true`.
 
-**Why:** Arithmetic first: `y + 5` is `3`. Relational next: `x > 3` is `true`. Then `&&`: `b && true` is `true`. Then `||`: short-circuits to `true`... wait — re-trace carefully. `b` is `true`, so `b && (x > y+5)` is `true && true` → `true`. Then `true || !b` → `true`. **Corrected answer: `true`.** This is the exact mid-trace mistake the exam exploits: students stop early or skip arithmetic precedence. Always finish the ladder.
+**Why:**  `b` is `true`, so `b && (x > y+5)` is `true && true` → `true`. Then `true || !b` → short-circuit → `true`. 
 
 ---
 
