@@ -2,7 +2,7 @@
 Mental model for declaring, traversing, and tracing rectangular arrays.
 
 ## 1. Mental model
-A 2D array is an *array of arrays*. Each row is itself a 1D array, and the outer array holds references to those rows as columns.
+A 2D array is an *array of arrays*. Each row is itself a 1D array, and the outer array holds references to those rows.
 
 ```
 int[][] grid = new int[3][4];   // 3 rows, 4 columns
@@ -32,7 +32,7 @@ Access uses two brackets: `grid[row][col]`. Row always comes first.
 
 > AP CS A treats 2D arrays as rectangular. Every row has the same length, so `arr[0].length` is the column count.
 
-## 4. Standard traversal — nested for loop (rows first, aka "row-major")
+## 4. Traversal — nested for loop (row-major)
 ```java
 for (int r = 0; r < arr.length; r++) {
     for (int c = 0; c < arr[0].length; c++) {
@@ -46,7 +46,7 @@ Visits row 0 left-to-right, then row 1, then row 2. This is the default order on
 ```java
 for (int c = 0; c < arr[0].length; c++) {
     for (int r = 0; r < arr.length; r++) {
-        // visit arr[r][c]
+        // visit arr[r][c] <-- note this is the same accessor as row-major>
     }
 }
 ```
@@ -63,18 +63,7 @@ for (int[] row : arr) {
 }
 ```
 
-## 6. Traps the exam loves
-- Swapping `arr.length` and `arr[0].length` — first is rows, second is columns.
-- Writing `arr[c][r]` when row-then-column is required.
-- Using enhanced for to assign: `val = 0;` does nothing to the array.
-- Off-by-one: `r <= arr.length` throws `ArrayIndexOutOfBoundsException`. Always `<`, never `<=`.
-- Assuming a "neighbor" exists. Before accessing `arr[r-1][c]` or `arr[r+1][c]`, bounds-check both indices.
-- Forgetting that `String[][]` defaults to `null`, not `""`. Calling a method on an uninitialized cell throws NPE.
-
-## 7. Tracing heuristic
-Draw the grid as a table with row and column indices labeled. Walk the loops by hand, writing the `(r, c)` pair visited at each step. For output questions, write each printed value in the order the loops produce them.
-
-## 8. Checking neighbors
+## 6. Checking neighbors
 For any cell at `arr[r][c]`, the four cardinal neighbors are one step up, down, left, and right. Each access needs a bounds guard or it will throw `ArrayIndexOutOfBoundsException` at the edges.
 
 ```
@@ -109,6 +98,17 @@ public int countLargerNeighbors(int[][] a, int r, int c) {
 
 Each guard is independent; each `if` handles one direction. Aligning the four lines vertically makes missing or swapped guards easier to spot during a trace.
 
+## 7. Traps the exam loves
+- Swapping `arr.length` and `arr[0].length` — first is rows, second is columns.
+- Writing `arr[c][r]` when row-then-column is required.
+- Using enhanced for to assign: `val = 0;` does nothing to the array.
+- Off-by-one: `r <= arr.length` throws `ArrayIndexOutOfBoundsException`. Always `<`, never `<=`.
+- Assuming a "neighbor" exists. Before accessing `arr[r-1][c]` or `arr[r+1][c]`, bounds-check both indices.
+- Forgetting that `String[][]` defaults to `null`, not `""`. Calling a method on an uninitialized cell throws NPE.
+
+## 8. Tracing heuristic
+Draw the grid as a table with row and column indices labeled. Walk the loops by hand, writing the `(r, c)` pair visited at each step. For output questions, write each printed value in the order the loops produce them.
+
 ## Examples
 
 ### Example 1 — Dimensions
@@ -122,8 +122,8 @@ What does `m.length + m[0].length` evaluate to?
 
 - A) 7 ✓
 - B) 12
-- C) 3
-- D) 4
+- C) 8
+- D) 6
 
 **Why:** `m.length` is the number of rows (3). `m[0].length` is the length of the first row (4). Sum is 7. The total cell count would be `m.length * m[0].length` (12), which is a common distractor.
 
@@ -162,7 +162,7 @@ for (int[] row : arr) {
 - C) Compile error
 - D) Runtime exception
 
-**Why:** `val` is a copy of each `int` in the row. Reassigning `val` does not change the array. The values in `arr` are untouched. To zero the array, use indexed loops: `arr[r][c] = 0;`.
+**Why:** `val` is a copy of each `int` in the row. Reassigning `val` does not change the array. The values in `arr` are untouched. To zero the array, use traditional indexed loops: `arr[r][c] = 0;`.
 
 ---
 
