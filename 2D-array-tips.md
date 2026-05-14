@@ -120,12 +120,12 @@ int[][] m = {{1, 2, 3, 4},
 ```
 What does `m.length + m[0].length` evaluate to?
 
-- A) 7 ✓
+- A) 7 
 - B) 12
 - C) 8
 - D) 6
 
-**Why:** `m.length` is the number of rows (3). `m[0].length` is the length of the first row (4). Sum is 7. The total cell count would be `m.length * m[0].length` (12), which is a common distractor.
+
 
 ---
 
@@ -140,9 +140,7 @@ for (int r = 0; r < g.length; r++) {
 }
 ```
 
-**Answer:** `1 2 3 4 5 6`
 
-**Why:** Outer loop fixes the row, inner loop walks across columns. Row 0 prints first (`1 2`), then row 1 (`3 4`), then row 2 (`5 6`). Swapping the loop order would print column-major: `1 3 5 2 4 6`.
 
 ---
 
@@ -158,11 +156,11 @@ for (int[] row : arr) {
 ```
 
 - A) 0
-- B) 1 ✓
+- B) 1 
 - C) Compile error
 - D) Runtime exception
 
-**Why:** `val` is a copy of each `int` in the row. Reassigning `val` does not change the array. The values in `arr` are untouched. To zero the array, use traditional indexed loops: `arr[r][c] = 0;`.
+
 
 ---
 
@@ -170,11 +168,10 @@ for (int[] row : arr) {
 A method should return the value directly above `arr[r][c]`, or `-1` if `r` is in the top row. Which fragment is correct?
 
 - A) `return arr[r-1][c];`
-- B) `if (r - 1 >= 0) return arr[r-1][c]; else return -1;` ✓
+- B) `if (r - 1 >= 0) return arr[r-1][c]; else return -1;` 
 - C) `if (arr[r-1][c] != null) return arr[r-1][c]; else return -1;`
 - D) `if (r > arr.length) return arr[r-1][c]; else return -1;`
 
-**Why:** A throws `ArrayIndexOutOfBoundsException` when `r == 0`. C dereferences before checking and crashes for the same reason — and `int` is not nullable. D has the comparison backwards and uses the wrong dimension. B is the standard guard: verify the index is in range *before* accessing the element. This is the short-circuit pattern from the boolean reference applied to arrays.
 
 ---
 
@@ -195,7 +192,3 @@ public static int countEven(int[][] a) {
     return count;
 }
 ```
-
-**Answer:** 4
-
-**Why:** Enhanced for is appropriate here because the method only reads values, never writes. Even values are 2, 8, 4, 6 — total 4. The structure (outer loop over rows, inner over values within a row) is the cleanest pattern for any "count / sum / find" operation on a 2D array, and matches the form College Board uses in FRQ rubrics.
