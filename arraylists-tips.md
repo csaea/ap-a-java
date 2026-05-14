@@ -167,11 +167,9 @@ list.set(2, "Y");
 ```
 
 - A) `["A", "X", "Y"]`
-- B) `["A", "X", "Y", "C"]` ✓
+- B) `["A", "X", "Y", "C"]` 
 - C) `["A", "X", "B", "Y"]`
 - D) `["X", "A", "Y", "C"]`
-
-**Why:** `add(1, "X")` inserts at index 1, shifting `"B"` and `"C"` right → `["A", "X", "B", "C"]`. Then `set(2, "Y")` replaces the element at index 2 (now `"B"`) with `"Y"` → `["A", "X", "Y", "C"]`. The trap is treating `set` as another insert (choice C) or losing track of the shift caused by `add`.
 
 ---
 
@@ -185,11 +183,11 @@ for (int i = 0; i < list.size(); i++) {
 ```
 
 - A) `[1, 3]`
-- B) `[1, 2, 3]` ✓
+- B) `[1, 2, 3]` 
 - C) `[1, 2, 2, 3]`
 - D) Runtime exception
 
-**Why:** When index 1 (value 2) is removed, the next `2` shifts down into index 1. The loop then increments to index 2, skipping it. The pattern repeats: every other `2` is missed. To remove all matching elements during forward iteration, decrement `i` after removal, or — preferred — iterate backward.
+
 
 ---
 
@@ -211,14 +209,14 @@ for (int n : nums)
 for (int i = nums.size() - 1; i >= 0; i--)
     if (nums.get(i) < 0) nums.remove(i);
 ```
-✓
+
 - D) 
 ```java
 for (int i = 0; i <= nums.size(); i++)
     if (nums.get(i) < 0) nums.remove(i);
 ```
 
-**Why:** A skips elements (the removal trap). B does two things wrong: it modifies a list during an enhanced for loop (throws `ConcurrentModificationException`), and `remove(n)` passes the *value* as an *index*. D has the wrong bound (`<=`) and would throw `ArrayIndexOutOfBoundsException` even before considering the skip bug. C walks from the end, so any shift caused by removal happens to indices that have already been processed.
+
 
 ---
 
@@ -234,9 +232,6 @@ public static int countShortNames(ArrayList<String> list) {
 }
 ```
 
-**Answer:** 2
-
-**Why:** Enhanced for is correct here because the method only reads elements. `"Al"` (length 2) and `"Cy"` (length 2) both satisfy the condition. `"Bea"` and `"Dee"` (length 3) do not. The accumulator pattern — declare `count` before the loop, increment inside, return after — is the canonical FRQ shape for any "how many" question.
 
 ---
 
@@ -250,7 +245,6 @@ System.out.println(prev + " " + list.get(1));
 
 - A) `yellow yellow`
 - B) `green green`
-- C) `green yellow` ✓
+- C) `green yellow` 
 - D) `yellow green`
 
-**Why:** `set` replaces the element at index 1 and **returns the value that was there before**. `prev` holds the old value `"green"`. After the call, `list.get(1)` is `"yellow"`. The same return-the-old-value behavior applies to `remove`, which returns the deleted element — a detail FRQs sometimes require students to capture and use.
