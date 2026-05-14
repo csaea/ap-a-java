@@ -21,10 +21,10 @@ Precedence determines **grouping**, not evaluation order. It tells you which ope
 
 Once grouping is settled, Java evaluates operands left-to-right and may stop early:
 
-- `&&` — if the left-side operand is `false`, the right-side operand is never evaluated.
-- `||` — if the left-side operand is `true`, the right-side operand is never evaluated.
+- `&&` — if the left operand is `false`, the right operand is never evaluated.
+- `||` — if the left operand is `true`, the right operand is never evaluated.
 
-**Example.** `a || b && c` is grouped as `a || (b && c)` because `&&` outranks `||`. But at runtime, `a` is evaluated first. If `a` is `true`, the entire right-side group is skipped.
+**Example.** `a || b && c` parses as `a || (b && c)` because `&&` outranks `||`. At runtime, `a` is evaluated first; if `a` is `true`, the entire parenthesized group is skipped.
 
 ## 3. De Morgan's law
 
@@ -51,7 +51,7 @@ Fully parenthesize the expression first using the ladder, *then* evaluate left t
 
 ## Examples
 
-### Example 1 — Equivalent expression (De Morgan's)
+### Example 1 — Equivalent expression 
 Which expression is equivalent to `!(a < b && c >= d)`?
 
 - A) `a > b && c <= d`
@@ -59,11 +59,13 @@ Which expression is equivalent to `!(a < b && c >= d)`?
 - C) `a >= b && c < d`
 - D) `a < b || c >= d`
 
-**Why:** Distribute the `!` (turns `&&` into `||`), then negate each relational: `<` becomes `>=`, `>=` becomes `<`. Choice B is the only one that flips both the operator and both comparisons.
+**Why:** The outer ! is true whenever the inner expression is false. An && is false whenever at least one side is false — so the whole thing is true when a < b fails, or c >= d fails, or both. "At least one fails" is an OR, with each side flipped to its opposite: a >= b || c < d.
+
+**Using De Morgan's law:** Distribute the `!` (turns `&&` into `||`), then negate each relational: `<` becomes `>=`, `>=` becomes `<`. Choice B is the only one that flips both the operator and both comparisons.
 
 ---
 
-### Example 2 — Short-circuit with side effects
+### Example 2 — Short-circuit 
 
 Given:
 ```java
