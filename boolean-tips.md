@@ -41,7 +41,7 @@ Read more about de Morgans laws [here](https://www.apcsexamprep.com/blogs/ap-csa
 ## 4. Traps the exam loves
 
 - `!a == b` means `(!a) == b`. It does not mean `!(a == b)`.
-- `x > 0 && < 10` is a syntax error — each side of `&&` needs a full boolean.
+- `num > 0 && < 10` is a syntax error — each side of `&&` needs a full boolean.
 - Reversed null-guard `obj.method() && obj != null` throws error.
 > Canonical pattern: `obj != null && obj.method()` — null-guard always goes first.
 
@@ -55,13 +55,9 @@ Fully parenthesize the expression first using the ladder, *then* evaluate left t
 Which expression is equivalent to `!(a < b && c >= d)`?
 
 - A) `a > b && c <= d`
-- B) `a >= b || c < d` ✓
+- B) `a >= b || c < d` 
 - C) `a >= b && c < d`
 - D) `a < b || c >= d`
-
-**Why:** The outer ! is true whenever the inner expression is false. An && is false whenever at least one side is false — so the whole thing is true when a < b fails, or c >= d fails, or both. "At least one fails" is an OR, with each side flipped to its opposite: a >= b || c < d.
-
-**Using De Morgan's law:** Distribute the `!` (turns `&&` into `||`), then negate each relational: `<` becomes `>=`, `>=` becomes `<`. Choice B is the only one that flips both the operator and both comparisons.
 
 ---
 
@@ -89,10 +85,6 @@ Given `int x = 4; int y = -2; boolean b = true;`, evaluate:
 b && x > y + 5 || !b
 ```
 
-**Answer:** `true`.
-
-**Why:**  `b` is `true`, so `b && (x > y+5)` is `true && true` → `true`. Then `true || !b` → short-circuit → `true`. 
-
 ---
 
 ### Example 4 — Range check
@@ -100,11 +92,11 @@ b && x > y + 5 || !b
 Which expression is `true` exactly when `score` is between 70 and 89 inclusive?
 
 - A) `score >= 70 || score <= 89`
-- B) `score >= 70 && score <= 89` ✓
+- B) `score >= 70 && score <= 89` 
 - C) `70 <= score <= 89`
 - D) `score > 70 && score < 89`
 
-**Why:** A is `true` for every integer (any number is either ≥ 70 or ≤ 89). C is a compile error — Java does not chain relational operators. D excludes the endpoints 70 and 89. Only B captures the closed interval.
+
 
 ---
 
@@ -113,8 +105,6 @@ Which expression is `true` exactly when `score` is between 70 and 89 inclusive?
 Which expression safely returns `true` when `String s` begins with the letter `'A'`, and `false` otherwise (including when `s` is `null`)?
 
 - A) `s.charAt(0) == 'A' && s != null`
-- B) `s != null && s.charAt(0) == 'A'` ✓
+- B) `s != null && s.charAt(0) == 'A'` 
 - C) `s != null || s.charAt(0) == 'A'`
 - D) `s.length() > 0 && s.charAt(0) == 'A'`
-
-**Why:** A and D dereference `s` before checking for null, throwing `NullPointerException`. C uses `||`, which only short-circuits when the left is `true` — a `null` value passes the first check and still triggers `charAt` on the right. Only B guarantees the null check runs first and stops the chain when `s` is `null`.
