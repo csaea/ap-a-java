@@ -10,18 +10,26 @@ import java.util.Scanner;
 public class ReadFiles {
     public static void main(String[] args) throws IOException {
         // this is where your .txt files should live:
+        System.out.println();
         System.out.println("Working dir: " + System.getProperty("user.dir"));
         TextReader lorem  = new TextReader("lorem.txt");
         TextReader grades = new TextReader("grades.txt");
-        System.out.println("Lines");
+        
+        System.out.println("\nLINES");
         lorem.printAllLines();
-        System.out.println("\nWords");
+
+        System.out.println();
+        System.out.println("\nWORDS");
+        System.out.println();
+        
         lorem.printAllWords();
+        System.out.println();
         System.out.println("\nLine count:           " + lorem.countLines());
         System.out.println("Word count:           " + lorem.countWords());
         System.out.println("Words longer than 6:  " + lorem.countWordsLongerThan(6));
-        System.out.println("\nScores");
+        System.out.println();
         System.out.println("Scores:   " + grades.readScores());
+        System.out.println();
         System.out.println("Average:  " + grades.averageScore());
     }
 }
