@@ -1,8 +1,0 @@
-Alice 95
-Bob 87
-Carol 91
-David 78
-Eve 92
-Frank 84
-Grace 89
-Henry 76
