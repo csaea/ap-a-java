@@ -6,7 +6,7 @@ public class CrashCourse {     // class header. Always PascalCase.
 
     public static void main(String[] args) {
 
-        // comments 
+        // Comments 
         
         /*  Multiline 
          Comment
@@ -101,5 +101,7 @@ public class CrashCourse {     // class header. Always PascalCase.
 
         System.out.println("Rows: " + arryGrid1.length);
         System.out.println("Coliumns: " + arryGrid1[0].length);
+
+
     }
 }
