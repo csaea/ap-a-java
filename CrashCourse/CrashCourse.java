@@ -1,5 +1,5 @@
 package CrashCourse;
-// If your Java file isn't running, you *might* need to add the following line and uncomment it, at the top of your file: 
+// If your Java file isn't running, you *might* need to add the following line at the top of your file: 
 // package CrashCourse (the name of the folder that includes CrashCourse.java)
 
 import java.util.ArrayList;
@@ -80,18 +80,18 @@ public class CrashCourse {     // class header. Always PascalCase.
         result += ", Cowboy.";
         System.out.println(result + "\n");
 
-        // 
         int[] arry1 = new int[10];
         System.out.println(arry1);
         System.out.println("length: " + arry1.length);
 
+        // assign values to positions in arry1
         arry1[0] = 11;
         arry1[1] = 2;
 
         System.out.println("Remainder: " + arry1[0] % arry1[1]);
 
         int[] arry2 = {34, 52, 3, 64, 32};
-        System.out.println("arry2: " + arry2);
+        System.out.println("arry2 memory address: " + arry2);
 
         //2D arrays (grid or a table or a matrix)
 
@@ -102,19 +102,19 @@ public class CrashCourse {     // class header. Always PascalCase.
         // 0 0 0
 
         System.out.println("Rows: " + arryGrid1.length);
-        System.out.println("Coliumns: " + arryGrid1[0].length);
+        System.out.println("Columns: " + arryGrid1[0].length);
 
         int[][] arryGrid2 = { {7,8,9}, 
                               {4,5,6}, 
                               {1,2,3} };
 
-        System.out.println(arryGrid2[0][1] + arryGrid2[2][2]); //access number 8
         System.out.println(arryGrid2[2][2]); //access number 3
+        System.out.println(arryGrid2[0][1] + arryGrid2[2][2]); //accesses two values and adds them
 
         System.out.println(arryGrid2);
 
         //ARRAYLISTS
-        // Can be any size. Lots of  built-in fucntions to help. 
+        // Can be any size. Lots of  built-in functions to help. 
         // Avoid primitive data types. Special classes for Integer, Double, Boolean, String. Called "wrapper classes"
 
         ArrayList<String> arryLst = new ArrayList<>();
@@ -165,7 +165,7 @@ public class CrashCourse {     // class header. Always PascalCase.
          System.out.println();
 
          // for loop
-         // initialize variable for an index; conditional; increment; decrement
+         // initialize variable at index; conditional; increment/decrement
          for(int i = 0; i < 5; i++) {
             System.out.println(i);
          }
