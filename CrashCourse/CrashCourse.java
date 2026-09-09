@@ -186,7 +186,7 @@ public class CrashCourse {     // class header. Always PascalCase.
          double[] arry = {5.1, 2.2, 5.3, 3.4, 8.5};
          System.out.println("Memory address: " + arry);
 
-         for (int i = 1; i < arry.length; i++) {
+         for (int i = 0; i < arry.length; i++) {
             System.out.println(arry[i]);
          }
 
