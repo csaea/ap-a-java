@@ -125,10 +125,80 @@ public class CrashCourse {     // class header. Always PascalCase.
         arryLst.remove(0);
         arryLst.add(0, "Word 4");
         arryLst.set(2, "Word 5");
-        
+
         System.out.println(arryLst);
         System.out.println(arryLst.size());
         System.out.println(arryLst.get(2));
+
+        // Math class
+        Math.max(5,9); //max value => returns 9
+        Math.min(7,3); // min value => returns 3
+        Math.sqrt(14); // square root
+        Math.abs(-67);   // absolute value
+
+        // CONDITIONALS
+
+        // if    else if    else 
+
+         boolean tru = true; boolean fal = false; 
+         
+         if(tru) {
+            System.out.println("Reached first condition");
+        } else if (!fal){
+            System.out.println("Reached second condition");
+        }  
+         else {
+            System.out.println("Reached else");
+         }
+
+         // ITERATION
+
+         // while loop 
+
+         int x = 5;
+
+         while (x < 10) {
+            System.out.print(x + " ");
+            x++;
+         }
+
+         System.out.println();
+
+         // for loop
+         // initialize variable for an index; conditional; increment; decrement
+         for(int i = 0; i < 5; i++) {
+            System.out.println(i);
+         }
+
+         // enhanced for loop (only for reading values)
+         ArrayList<String> animals = new ArrayList<>();
+         animals.add("Sheep");
+         animals.add("Deer");
+         animals.add("Moose");
+         System.out.println("ArrayList: " + animals);
+
+         for (String s : animals) {
+            System.out.println("We saw a " + s);
+         }
+
+         // printing values of an array with iteration
+
+         double[] arry = {5.1, 2.2, 5.3, 3.4, 8.5};
+         System.out.println("Memory address: " + arry);
+
+         for (int i = 1; i < arry.length; i++) {
+            System.out.println(arry[i]);
+         }
+
+        int[][] arryMatrix = {  { 0, 32, 12 }  ,   { 7, 13, 22  } ,  { 6, 77, 100  }  };
+        System.out.println(arryMatrix);
+
+        for(int row = 0; row < arryMatrix.length; row++) {
+            for(int col = 0; col < arryMatrix[row].length; col++) {
+                System.out.print(arryMatrix[row][col] + " ");
+            }
+            System.out.println();
+        }
 
     }
 }
