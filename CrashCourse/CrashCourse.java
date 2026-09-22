@@ -73,6 +73,7 @@ public class CrashCourse {     // class header. Always PascalCase.
         System.out.println(h);
 
         // STRINGS 
+        // Strings are not "primitive" data types, so we use a class Data Type String.
         String s1 = "Goodnight";
         String s2 = " and ";
         String s3 = "Goodbye";
