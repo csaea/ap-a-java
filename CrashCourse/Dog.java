@@ -11,7 +11,7 @@
 public class Dog
 {
     //  Attributes (instance variables) -- private because they are only used in THIS class. 
-    private String name;
+    public String name;
     private String ownerName;
     private String breed;
     private int age;
