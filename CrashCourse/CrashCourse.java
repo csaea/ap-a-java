@@ -2,24 +2,28 @@ package CrashCourse;
 // If your Java file isn't running, you *might* need to add the following line at the top of your file: 
 // package CrashCourse (the name of the folder that includes CrashCourse.java)
 
-import java.util.ArrayList;
+import java.util.ArrayList;   // lets us use ArrayList, which isn't built in by default
 
-public class CrashCourse {     // class header. Always PascalCase. 
+public class CrashCourse {     // class header. Always PascalCase. The file name must match: CrashCourse.java
 
+    // main is where every Java program starts running
     public static void main(String[] args) {
 
         // Comments 
+        // Java ignores comments. Use them to explain your code.
         
         /*  Multiline 
          Comment
          Here
          */
 
-        System.out.print("Hello");
-        System.out.println("World"); // prints on a new line
+        // Every statement in Java ends with a semicolon ;
+        System.out.print("Hello");      // print stays on the same line
+        System.out.println("World"); // println moves to a new line after printing
         System.out.println("Hello world");
 
         // VARIABLE DECLARATIONS:
+        // Java makes you state the data type of every variable, and it can never change.
         // primitive variables:
 
         int a; // integer
@@ -33,9 +37,10 @@ public class CrashCourse {     // class header. Always PascalCase.
         // Arithmetic Operators 
         // + - / *  %
         // += -= /=  %=  (compound assignment operators)
+        // % gives the remainder. int / int drops the decimal: 7 / 2 is 3
 
         int d = 3 - 1; // d => 2
-        d += 7; // d => 9
+        d += 7; // d => 9   (same as d = d + 7)
 
         System.out.println("d is equal to " + d);
 
@@ -48,12 +53,14 @@ public class CrashCourse {     // class header. Always PascalCase.
 
         //COMPARISONS (always returns true or false)
         //  <  >   <=   >=   ==   !=
+        // == checks if two values are equal. A single = assigns a value.
         System.out.println(4 < 5);
         System.out.println(7 == 4);
         System.out.println(1 != 2);
 
         // LOGICAL OPERATORS 
-        // In order of presedence: NOT:  !   AND: &&   OR: ||
+        // In order of precedence: NOT:  !   AND: &&   OR: ||
+        // ! flips a boolean, && needs BOTH sides true, || needs AT LEAST ONE true
 
         boolean f = false; boolean t = true;
 
@@ -67,34 +74,40 @@ public class CrashCourse {     // class header. Always PascalCase.
         System.out.println(t || (f && t)); //short circuits after checking the first t.
 
         // CASTING (converting)
-        int g = (int)5.5;
+        // Put the new data type in parentheses before the value.
+        int g = (int)5.5;   // truncates (chops off) the decimal => 5
         System.out.println(g);
-        double h = (double)5/6;
+        double h = (double)5/6;   // 5 becomes 5.0 first, so the division keeps its decimal
         System.out.println(h);
 
         // STRINGS 
         // Strings are not "primitive" data types, so we use a class Data Type String.
+        // Strings use double quotes "". Join them with + (concatenation).
         String s1 = "Goodnight";
         String s2 = " and ";
         String s3 = "Goodbye";
         String result = s1 + s2 + s3;
         result += ", Cowboy.";
-        System.out.println(result + "\n");
+        System.out.println(result + "\n");   // \n adds a new line
 
-        int[] arry1 = new int[10];
-        System.out.println(arry1);
+        // ARRAYS
+        // An array holds many values of ONE data type. Its size is fixed once created.
+        int[] arry1 = new int[10];   // 10 slots, each starts at 0
+        System.out.println(arry1);   // printing an array directly shows a memory address, not its values
         System.out.println("length: " + arry1.length);
 
         // assign values to positions in arry1
+        // Indexes start at 0, so the last index is length - 1
         arry1[0] = 11;
         arry1[1] = 2;
 
         System.out.println("Remainder: " + arry1[0] % arry1[1]);
 
-        int[] arry2 = {34, 52, 3, 64, 32};
+        int[] arry2 = {34, 52, 3, 64, 32};   // creates and fills an array in one line
         System.out.println("arry2 memory address: " + arry2);
 
         //2D arrays (grid or a table or a matrix)
+        // An array of arrays. Always [row] first, then [column].
 
         int[][] arryGrid1 = new int[4][3]; //[rows][columns]
         // 0 0 0
@@ -117,6 +130,8 @@ public class CrashCourse {     // class header. Always PascalCase.
         //ARRAYLISTS
         // Can be any size. Lots of  built-in functions to help. 
         // Avoid primitive data types. Special classes for Integer, Double, Boolean, String. Called "wrapper classes"
+        // add puts an item at the end, remove(index) deletes, add(index, value) inserts,
+        // set(index, value) replaces, get(index) reads, size() counts the items
 
         ArrayList<String> arryLst = new ArrayList<>();
 
@@ -127,11 +142,12 @@ public class CrashCourse {     // class header. Always PascalCase.
         arryLst.add(0, "Word 4");
         arryLst.set(2, "Word 5");
 
-        System.out.println(arryLst);
+        System.out.println(arryLst);   // unlike arrays, ArrayLists print their values
         System.out.println(arryLst.size());
         System.out.println(arryLst.get(2));
 
         // Math class
+        // These methods RETURN a value. Nothing shows up unless you print it or store it in a variable.
         Math.max(5,9); //max value => returns 9
         Math.min(7,3); // min value => returns 3
         Math.sqrt(14); // square root
@@ -140,6 +156,8 @@ public class CrashCourse {     // class header. Always PascalCase.
         // CONDITIONALS
 
         // if    else if    else 
+        // Java checks top to bottom and runs only the FIRST block that is true.
+        // The condition goes in ( ) and the code to run goes in { }
 
          boolean tru = true; boolean fal = false; 
          
@@ -153,8 +171,10 @@ public class CrashCourse {     // class header. Always PascalCase.
          }
 
          // ITERATION
+         // Iteration means repeating code with a loop.
 
          // while loop 
+         // Repeats while the condition is true. Something inside must change, or it loops forever.
 
          int x = 5;
 
@@ -167,11 +187,13 @@ public class CrashCourse {     // class header. Always PascalCase.
 
          // for loop
          // initialize variable at index; conditional; increment/decrement
+         // This one counts 0, 1, 2, 3, 4 and stops when i < 5 becomes false
          for(int i = 0; i < 5; i++) {
             System.out.println(i);
          }
 
          // enhanced for loop (only for reading values)
+         // Reads each item in order: "for each String s in animals"
          ArrayList<String> animals = new ArrayList<>();
          animals.add("Sheep");
          animals.add("Deer");
@@ -183,6 +205,7 @@ public class CrashCourse {     // class header. Always PascalCase.
          }
 
          // printing values of an array with iteration
+         // Loop through every index, from 0 to length - 1
 
          double[] arry = {5.1, 2.2, 5.3, 3.4, 8.5};
          System.out.println("Memory address: " + arry);
@@ -193,6 +216,8 @@ public class CrashCourse {     // class header. Always PascalCase.
             System.out.println(arry[i]);
          }
 
+        // Nested loops print a 2D array: the outer loop picks a row,
+        // the inner loop walks across that row's columns
         int[][] arryMatrix = {  { 0, 32, 12 }  ,   { 7, 13, 22  } ,  { 6, 77, 100  }  };
         System.out.println(arryMatrix);
 
@@ -200,7 +225,7 @@ public class CrashCourse {     // class header. Always PascalCase.
             for(int col = 0; col < arryMatrix[row].length; col++) {
                 System.out.print(arryMatrix[row][col] + " ");
             }
-            System.out.println();
+            System.out.println();   // new line after each row
         }
 
     }
