@@ -228,5 +228,14 @@ public class CrashCourse {     // class header. Always PascalCase. The file name
             System.out.println();   // new line after each row
         }
 
+        String name1 = "Jo";
+        String name2 = "Jo";
+
+        if (name1 == name2){
+            System.out.println("Names are same");
+        } else {
+            System.out.println("Name's are . . . not same?");
+        }
+
     }
 }

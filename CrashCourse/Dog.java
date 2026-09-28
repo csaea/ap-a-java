@@ -11,7 +11,7 @@
 public class Dog
 {
     //  Attributes (instance variables) -- private because they are only used in THIS class. 
-    public String name;
+    private String name;
     private String ownerName;
     private String breed;
     private int age;
@@ -36,6 +36,18 @@ public class Dog
         System.out.println("name: " + this.name + "\nownerName: " + this.ownerName + "\nbreed: " + this.breed);
     }
 
+    public String getName(){
+        System.out.println(name);
+        return name;
+    }
+
+    public void setName(String newName) {
+        name = newName;
+    }
+
+    public double getWeight(){
+        return weight;
+    }
 
     //  Behaviors that only print -- they change nothing 
     public void bark()
