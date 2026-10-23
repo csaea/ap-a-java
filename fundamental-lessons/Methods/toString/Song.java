@@ -9,7 +9,7 @@
 
 public class Song {
 
-    // ATTRIBUTES. intance variables . . . . hold DATA for each song instance
+    // ATTRIBUTES. instance variables . . . . holds DATA for each song instance
 
     private String title;
     private String artist;
@@ -39,7 +39,7 @@ public class Song {
     public String toString()
     {
         
-        return title + " by " + artist + " - " + plays + "plays";
+        return title + " by " + artist + " - " + plays + " plays";
     }
 
     // ===== CHALLENGE 1 =====
