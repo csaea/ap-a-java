@@ -38,7 +38,7 @@ public class Email {
     // getDomain
     // should return .com or .edu  or .net, everything after the @
     public String getDomain() {
-       return address.substring(address.indexOf("@") + 1);
+       return address.substring(address.indexOf("@")); // <-- incorrect. What needs to change?
     }
 
     // isSchool
