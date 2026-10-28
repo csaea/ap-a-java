@@ -17,7 +17,7 @@ public class EmailTester {
         System.out.println(word.indexOf("B"));
         
         Email michael = new Email("mharrell@nhvweb.net");
-        Email jojo = new Email("jojo@nhvweb.net");
+        Email jojo = new Email("jojo@gmail.com");
 
         System.out.println(michael.toString());
 
@@ -26,6 +26,9 @@ public class EmailTester {
 
         System.out.println(michael.getUser());
         System.out.println(jojo.getUser());
+
+        System.out.println(michael.getDomain());
+        System.out.println(jojo.getDomain());
 
     }
 }
