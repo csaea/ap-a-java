@@ -21,9 +21,9 @@ public class RobotTester {
         System.out.println(r2.isOn());           // true
 
         // == : same object (reference)
-        Robot r4 = new Robot("Rover", "RX-77-B", 8.0);
-        System.out.println(r2 == r3);            // true
-        System.out.println(r1 == r4);            // false: same data, different objects
+        Robot r4 = new Robot("Rover", "RX-77-B", 8.0);  // same data as r1
+        System.out.println(r2 == r3);                   // true because of ALIASING, both objects are the  same
+        System.out.println(r1 == r4);                   // false: same data, different objects
 
         // == vs .equals() on Strings
         String s1 = "RX-77-B";
@@ -47,7 +47,7 @@ public class RobotTester {
         r4.addBattery(2.5);         // OK: double argument
         r4.addBattery(2);           // OK: int WIDENS to double
         // r4.addBattery("2.5");    // ERROR: String is not a double
-        // Robot.addBattery(2.5);   // ERROR: non-static method, needs an object
+        // Robot.addBattery(2.5);   // ERROR: calls class on method, needs an object
         System.out.println(r4.getBattery());   // 12.5
 
         // TRACING: track each object's state
