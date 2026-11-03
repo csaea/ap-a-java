@@ -68,16 +68,6 @@
   public class Library { }
   ```
 
-- **Separation of Concerns**
-
-  Keeping different parts of a program focused on their own tasks, so code is easier to manage.
-
-  ```java
-  public class Main { } //only concerned with running the program and testing
-  public class Library { } //only concerned with creating library objects
-  public class Book { } //only concerned with creating book objets
-  ```
-
 - **Encapsulation**
 
   Hiding details inside a class and only showing what is necessary. Protects the object through access control to the data.
@@ -85,14 +75,6 @@
   ```java
   private String title; // private attribute, only avaible to the class its written in.
   public String getTitle() { return title; } // public getter, accessible through inheritance.
-  ```
-
-- **Package**
-
-  A group of related classes with a shared namespace.
-
-  ```java
-  package com.thelibraryproject.libraryapp;
   ```
 
 - **Parameter**
@@ -127,29 +109,6 @@
   int average = (10 + 20) / 3; // incorrect calculation
   ```
 
-- **Inheritance**
-
-  OOP principle where a subclass may inherit the attributes and behaviors of a superclass.
-
-  ```java
-  public class Dog extends Pet { } //now Dog can run methods and access attributes located in its superclass, Pet. 
-  ```
-
-- **Superclass**
-
-  A class that can be extended to create subclasses.
-
-  ```java
-  public class Pet { }
-  ```
-
-- **Subclass**
-
-  A class that inherits attributes and behaviors of a superclass. It `extends` from a superclass.
-
-  ```java
-  public class Cat extends Pet { }
-  ```
 
 - **Tester Class**
 
