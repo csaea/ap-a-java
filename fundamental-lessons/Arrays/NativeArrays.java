@@ -107,7 +107,7 @@ public class NativeArrays {
 
         int highest = temps[0];
         int highestIndex = 0;
-        
+
         for (int i = 1; i < temps.length; i++) {
                 // deals with value
                 highest = Math.max(highest, temps[i]);
@@ -124,6 +124,12 @@ public class NativeArrays {
         // Loop 10 times. Each time, use Math.random() to get a random number from 1 to 100 and a random index from 0 to 9, then put the number at that index. Print the array. 
         // Then answer: why are some spots still 0?
 
+
+        // Commit your code. 
+        // Submit it to Google Classroom Arrays assignment
+        // Paste the URL for the Arrays folder only:
+        
+        //ap-a-java/fundamental-lessons/Arrays/
 
 
 
