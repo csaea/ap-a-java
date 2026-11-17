@@ -8,7 +8,7 @@ public class Robot {
     private double battery;
     private boolean isOn;
 
-    // STATIC VARIABLE: belongs to the CLASS, shared by all Robots
+    // STATIC VARIABLE: belongs to the CLASS, value shared by all Robots, unlike the above instance variables
     private static int robotCount = 0;
 
     // CONSTRUCTOR: no return type, same name as class
@@ -29,18 +29,16 @@ public class Robot {
     // MATH.RANDOM(): returns a double from 0.0 (inclusive) up to 1.0 (exclusive),
     // a different value each call. Multiplying by 10 stretches that range to
     // 0.0 up to 10.0.
-    //
-    // MATH.MAX(a, b): compares two numbers and returns the larger one.
-    // Here it compares 0 with (battery - drain). If the result would be
-    // negative, Math.max returns 0 instead, so battery never goes below zero.
 
-    // This method drains a random amount of battery (0 to 10) without letting it drop below zero.
+    // MATH.MAX(a, b): compares two numbers and returns the larger one.
+
     public void randomDrain() {
         double drain = Math.random() * 10;
         battery = Math.max(0, battery - drain);
+
     }
 
-    // STATIC METHOD: called on the class -> Robot.getRobotCount()
+    // STATIC METHOD: called on the class -> Robot.getRobotCount(). 
     public static int getRobotCount() {
         return robotCount;
     }
