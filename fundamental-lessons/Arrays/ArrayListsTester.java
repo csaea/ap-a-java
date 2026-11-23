@@ -17,6 +17,10 @@ public class ArrayListsTester {
         ArrayLists.modifyAnimals(animals);
 
         ArrayLists.numberUtilities();
+
+        ArrayLists.membershipCheck(animals);
+        ArrayLists.copyList();
+        ArrayLists.removeShortNames(animals);
         
 
     }
