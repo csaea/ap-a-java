@@ -185,21 +185,24 @@ public class ArrayLists {
      *
   */
 
-         /* ===== CHECKPOINT 4: Putting It All Together =====
+    /* ===== CHECKPOINT 4: Putting It All Together =====
      * CHALLENGE:
      * Write longNames(ArrayList<String> animals) that RETURNS A NEW list of every name longer
      * than the average name length. Along the way, print the longest name and whether
      * "glass frog" is in the list. Use ONLY enhanced for loops.
-     * (Why can't you just remove the short names inside an enhanced for loop?)
+
      * Example: [cat, pangolin, emu, glass frog]  ->  average 6.0, returns [pangolin, glass frog]
      *          prints  Longest: glass frog   Has glass frog: true
+     * 
      * Tools:   enhanced for, accumulator, min/max tracking, boolean flag, .equals(),
      *          (double) cast, building a new list with add(obj)
+     * 
      * Steps:   set up total = 0, longest = list.get(0), and hasFrog = false,
      *          loop once to add each length to total, update longest, and flag "glass frog",
      *          compute avg as a double AFTER the loop, make an empty result list,
      *          loop a second time and add each name longer than avg, print longest and hasFrog,
      *          return result
+     * 
      * Hint:    you need TWO loops -- you can't compare to the average until you've seen every name
      *
 */
