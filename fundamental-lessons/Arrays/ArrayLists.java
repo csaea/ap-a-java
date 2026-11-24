@@ -197,18 +197,55 @@ public class ArrayLists {
      * Tools:   enhanced for, accumulator, min/max tracking, boolean flag, .equals(),
      *          (double) cast, building a new list with add(obj)
      * 
-    * Steps:   1. Set up total = 0, longest = animals.get(0), hasFrog = false
+    * Steps:   X 1. Set up total = 0, longest = animals.get(0), hasFrog = false
     *          2. Loop #1 over every name:
-    *               a. add its length to total
-    *               b. if it's longer than longest, update longest
-    *               c. if it .equals("glass frog"), set hasFrog = true
-    *          3. AFTER the loop, compute avg = (double) total / animals.size()
-    *          4. Make an empty ArrayList<String> result
-    *          5. Loop #2 over every name: if its length > avg, add it to result
+    *               X a. add its length to total 
+    *               X b. if it's longer than longest, update longest
+    *               X c. if it .equals("glass frog"), set hasFrog = true
+    *          3. X AFTER the loop, compute avg = (double) total / animals.size()
+    *          4. X Make an empty ArrayList<String> called result
+    *          5. X Loop #2 over every name: if its length > avg, add it to result
     *          6. Print "Longest: " + longest and "Has glass frog: " + hasFrog
     *          7. Return result
      * 
      *
 */
+
+public static ArrayList<String> longNames(ArrayList<String> animals) {
+
+        int total = 0;
+        String longest = animals.get(0);
+        boolean hasFrog = false;
+
+        for (String name : animals) {
+
+            total += name.length();
+
+            if (name.length() > longest.length()) {
+                longest = name;
+            }
+
+            if (name.equals("glass frog")) {
+                hasFrog = true;
+            }
+        }
+
+        double avg = (double) total / animals.size();
+
+        ArrayList<String> result = new ArrayList<>();
+
+        for (String name : animals) {
+            if (name.length() > avg) {
+                result.add(name);
+            }
+        }
+
+        System.out.println("longest:" + longest);
+        System.out.println("Has glass frog?" + hasFrog);
+
+        return result;
+
+}
+
 
 }
