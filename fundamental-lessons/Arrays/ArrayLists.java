@@ -197,13 +197,17 @@ public class ArrayLists {
      * Tools:   enhanced for, accumulator, min/max tracking, boolean flag, .equals(),
      *          (double) cast, building a new list with add(obj)
      * 
-     * Steps:   set up total = 0, longest = list.get(0), and hasFrog = false,
-     *          loop once to add each length to total, update longest, and flag "glass frog",
-     *          compute avg as a double AFTER the loop, make an empty result list,
-     *          loop a second time and add each name longer than avg, print longest and hasFrog,
-     *          return result
+    * Steps:   1. Set up total = 0, longest = animals.get(0), hasFrog = false
+    *          2. Loop #1 over every name:
+    *               a. add its length to total
+    *               b. if it's longer than longest, update longest
+    *               c. if it .equals("glass frog"), set hasFrog = true
+    *          3. AFTER the loop, compute avg = (double) total / animals.size()
+    *          4. Make an empty ArrayList<String> result
+    *          5. Loop #2 over every name: if its length > avg, add it to result
+    *          6. Print "Longest: " + longest and "Has glass frog: " + hasFrog
+    *          7. Return result
      * 
-     * Hint:    you need TWO loops -- you can't compare to the average until you've seen every name
      *
 */
 
